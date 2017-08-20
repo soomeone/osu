@@ -530,6 +530,10 @@
       <Project>{d9a367c9-4c1a-489f-9b05-a0cea2b53b58}</Project>
       <Name>osu.Game.Resources</Name>
     </ProjectReference>
+    <ProjectReference Include="..\osu.ColorHandler\osu.ColorHandler.csproj">
+      <Project>{05595E0C-A1BF-4E6C-82D4-A44A46B5D0DF}</Project>
+      <Name>osu.ColorHandler</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\osu.licenseheader">

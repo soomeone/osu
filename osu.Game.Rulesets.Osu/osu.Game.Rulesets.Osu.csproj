@@ -98,6 +98,10 @@
       <Project>{C76BF5B3-985E-4D39-95FE-97C9C879B83A}</Project>
       <Name>osu.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\osu.ColorHandler\osu.ColorHandler.csproj">
+      <Project>{05595E0C-A1BF-4E6C-82D4-A44A46B5D0DF}</Project>
+      <Name>osu.ColorHandler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\osu.Game\osu.Game.csproj">
       <Project>{0d3fbf8a-7464-4cf7-8c90-3e7886df2d4d}</Project>
       <Name>osu.Game</Name>

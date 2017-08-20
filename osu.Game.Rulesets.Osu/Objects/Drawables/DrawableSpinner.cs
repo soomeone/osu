@@ -123,6 +123,15 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables
 
                 circle.FadeColour(completeColour, duration);
                 glow.FadeColour(completeColour, duration);
+
+
+                ColorHandler.ColorHandler.SetFadeComboColor(completeColour); // Fade keyboard color to completed
+            }
+
+            if (Time.Current >= HitObject.StartTime && !disc.Complete)
+            {
+                // When spinner starts showing up, set keyboard color
+                ColorHandler.ColorHandler.SetComboColor(normalColour);
             }
 
             if (!userTriggered && Time.Current >= spinner.EndTime)

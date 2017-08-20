@@ -149,6 +149,12 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables
                     Expire();
                     break;
             }
+
+            if (state != ArmedState.Idle)
+                // Pass the current color to the handler, if the hitpoint has come
+                ColorHandler.ColorHandler.SetComboColor(circle.Colour);
+            //else if (state == ArmedState.Miss)
+              //  ColorHandler.ColorHandler.SetComboColor(OpenTK.Graphics.Color4.IndianRed);
         }
 
         public Drawable ProxiedLayer => ApproachCircle;
