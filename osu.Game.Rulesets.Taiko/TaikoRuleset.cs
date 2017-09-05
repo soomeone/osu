@@ -13,12 +13,25 @@ using System.Collections.Generic;
 using osu.Framework.Graphics;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.Taiko.Scoring;
+using osu.Framework.Input.Bindings;
 
 namespace osu.Game.Rulesets.Taiko
 {
     public class TaikoRuleset : Ruleset
     {
-        public override HitRenderer CreateHitRendererWith(WorkingBeatmap beatmap, bool isForCurrentRuleset) => new TaikoHitRenderer(beatmap, isForCurrentRuleset);
+        public override RulesetContainer CreateRulesetContainerWith(WorkingBeatmap beatmap, bool isForCurrentRuleset) => new TaikoRulesetContainer(this, beatmap, isForCurrentRuleset);
+
+        public override IEnumerable<KeyBinding> GetDefaultKeyBindings(int variant = 0) => new[]
+        {
+            new KeyBinding(InputKey.D, TaikoAction.LeftRim),
+            new KeyBinding(InputKey.F, TaikoAction.LeftCentre),
+            new KeyBinding(InputKey.J, TaikoAction.RightCentre),
+            new KeyBinding(InputKey.K, TaikoAction.RightRim),
+            new KeyBinding(InputKey.MouseLeft, TaikoAction.LeftCentre),
+            new KeyBinding(InputKey.MouseLeft, TaikoAction.RightCentre),
+            new KeyBinding(InputKey.MouseRight, TaikoAction.LeftRim),
+            new KeyBinding(InputKey.MouseRight, TaikoAction.RightRim),
+        };
 
         public override IEnumerable<Mod> GetModsFor(ModType type)
         {
@@ -103,5 +116,10 @@ namespace osu.Game.Rulesets.Taiko
         public override ScoreProcessor CreateScoreProcessor() => new TaikoScoreProcessor();
 
         public override int LegacyID => 1;
+
+        public TaikoRuleset(RulesetInfo rulesetInfo)
+            : base(rulesetInfo)
+        {
+        }
     }
 }
